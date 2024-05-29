@@ -62,6 +62,7 @@ else{
             onChange={(e) => setSearchQuery(e.target.value)}
             className='w-1/2 px-5 border border-gray-400 p-2 rounded-l-full'
             type="text"
+            placeholder='search'
             onFocus={()=> setShowSuggestions(true)}
             onBlur={()=> setShowSuggestions(false)}
           />

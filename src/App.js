@@ -14,9 +14,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Body />}/>
-            {/* <Route index element={<MainContainer />} /> */}
             <Route path="/watch" element={<WatchPage />} />
-          {/* </Route> */}
         </Routes>
       </Router>
     </Provider>

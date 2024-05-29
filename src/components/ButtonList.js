@@ -2,17 +2,31 @@ import React from 'react'
 import Button from './Button'
 
 const ButtonList = () => {
+  const list = ["All",
+              "Gmaing",
+              "Songs",
+              "Live",
+              "Cricket",
+              "Soccer",
+              "News",
+              "Cooking",
+              "Valenties",
+              "Mixes",
+              "Live",
+              "T-series",
+               "News",
+              "Stocks"
+              ,"Watched",
+              "Mantras"];
   return (
     <div className='flex space-x-2'>
-      <Button  name="All"/>
-      <Button name="Gmaing"/>
-      <Button name="Songs"/>
-      <Button name="Live"/>
-      <Button name="Cricket"/>
-      <Button name="Soccer"/>
-      <Button name="News"/>
-      <Button name="Coking"/>
-      <Button name="Valenties"/>
+    {
+      list.map((element,index)=>{
+        return <Button key={index} name={element}/>
+
+      })
+      
+    }
       
       </div>
   )

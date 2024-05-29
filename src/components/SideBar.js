@@ -9,10 +9,12 @@ const SideBar = () => {
   if(!isMenuOpen) return null;
  
   return (
-    <div className='p-4 shadow-lg w-80'>
-      <ul>
+    <div className='p-4 shadow-lg col-span-4'>
+      <ul className=''>
         <li>
-        <Link to="/"><BeakerIcon className="h-6 w-6 text-blue-500" />Home</Link>
+        <Link to="/" className="inline-flex items-center">
+  <BeakerIcon className="h-6 w-6 mr-2 text-blue-500" /> Home
+</Link>
         </li>
         <li>
           Short

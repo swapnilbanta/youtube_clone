@@ -28,3 +28,14 @@ time complexity tro search in object = o(1)
 }
 
 new Map(); searching inside the object
+
+    <div className='grid grid-flow-col p-5 m-2 shadow-lg'>
+      <div className='flex col-span-1 '>
+
+      DL- Get data live
+      Ul- Update the ui
+
+      Data(Live)
+      ->web sockets (Ui)   Handskake  bidirectional live data   (server)
+      ->Long polling (API polling)  (UI)  request to server (server)
+
