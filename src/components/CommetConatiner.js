@@ -1,103 +1,25 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Commet from './Commet';
 import CommetList from './CommetList';
+import {  useSearchParams } from 'react-router-dom';
+import { GOOGLE_API_KEY, YOUTUBE_COMMET_API } from '../utils/constants';
 
 const CommetConatiner = () => {
-
-    const commetData = [
-        {
-            name:"swapnil banta",
-            text:"loreum ispum sit amet, caonstructor",
-            replies:[
-                {
-                 name:"rajesh banta",
-                    text:"loreum ispum sit amet, caonstructor"
-        
-                },
-                {
-                     name:"rajesh banta",
-                       text:"loreum ispum sit amet, caonstructor"
-           
-                   },
-                   {
-                    name:"rajesh banta",
-                       text:"loreum ispum sit amet, caonstructor"
-           
-                   },
-
-            ]
-        },
-        {
-            name:"swapnil banta",
-            text:"loreum ispum sit amet, caonstructor",
-            replies:[
-                {
-                 name:"rajesh banta",
-                    text:"loreum ispum sit amet, caonstructor"
-        
-                },
-                {
-                     name:"rajesh banta",
-                       text:"loreum ispum sit amet, caonstructor"
-           
-                   },
-                   {
-                    name:"rajesh banta",
-                       text:"loreum ispum sit amet, caonstructor"
-           
-                   },
-
-            ]
-        },
-        {
-            name:"swapnil banta",
-            text:"loreum ispum sit amet, caonstructor",
-            replies:[
-                {
-                 name:"rajesh banta",
-                    text:"loreum ispum sit amet, caonstructor"
-        
-                },
-                {
-                     name:"rajesh banta",
-                       text:"loreum ispum sit amet, caonstructor"
-           
-                   },
-                   {
-                    name:"rajesh banta",
-                       text:"loreum ispum sit amet, caonstructor"
-           
-                   },
-
-            ]
-        },
-        {
-            name:"swapnil banta",
-            text:"loreum ispum sit amet, caonstructor",
-            replies:[
-                {
-                 name:"rajesh banta",
-                    text:"loreum ispum sit amet, caonstructor"
-        
-                },
-                {
-                     name:"rajesh banta",
-                       text:"loreum ispum sit amet, caonstructor"
-           
-                   },
-                   {
-                    name:"rajesh banta",
-                       text:"loreum ispum sit amet, caonstructor"
-           
-                   },
-
-            ]
-        },
-    ]
-  return (
+    const [searchParams] = useSearchParams();
+    const[commetsData, setCommets] = useState([]);
+    const id = searchParams.get("v")
+useEffect(()=>{
+    getCommetsData();
+},[]);
+const getCommetsData = async ()=>{
+const data =  await fetch(YOUTUBE_COMMET_API+id+"&key="+GOOGLE_API_KEY);
+const json = await data.json();
+setCommets(json.items);
+}
+ return (
     <div className='m-5 p-2 w-3/6'>
         <h1 className='text-2xl font-bold'> Commets: </h1>
-        <CommetList commets = {commetData} / >
+        <CommetList commets = {commetsData} / >
     </div>
   )
 }

@@ -19,7 +19,7 @@ const ButtonList = () => {
               ,"Watched",
               "Mantras"];
   return (
-    <div className='flex space-x-2'>
+    <div className='flex'>
     {
       list.map((element,index)=>{
         return <Button key={index} name={element}/>

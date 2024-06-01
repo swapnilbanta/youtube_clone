@@ -15,7 +15,7 @@ const i =setInterval(()=>{
     name:generateRandomName(),
     message: makeRandomMessage(20),
   }))
-},2000);
+},1500);
 
 return ()=> clearTimeout(i);
   },[]);
@@ -35,8 +35,9 @@ return ()=> clearTimeout(i);
       name:"swapnil banta",
       message:liveMessage
     }))
-    
+    setLiveMessage("");
   }}
+
   >
 <input  className="px-2 w-1/2" type="text" value={liveMessage}  onChange={(e)=> {setLiveMessage(e.target.value)}}/>
 <button className='px-2 mx-2 bg-green-100'>Send</button>

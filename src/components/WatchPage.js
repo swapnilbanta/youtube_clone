@@ -36,7 +36,7 @@ const WatchPage = () => {
           </div>
         </div>
       </div>
-      <CommetConatiner/>
+      <CommetConatiner />
      
     </>
   );
