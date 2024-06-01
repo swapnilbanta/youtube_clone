@@ -51,8 +51,8 @@ const VideoContainer = () => {
     setNextPageToken(json.nextPageToken);
   };
 
-  return videos.length === 0 ? (
-    <ShimmerCard videos={videos} />
+  return videos?.length === 0 ? (
+    <ShimmerCard  />
   ) : (
     <div className="flex flex-wrap">
       {videos.map(video => (

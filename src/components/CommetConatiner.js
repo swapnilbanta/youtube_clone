@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import Commet from './Commet';
 import CommetList from './CommetList';
 import {  useSearchParams } from 'react-router-dom';
 import { GOOGLE_API_KEY, YOUTUBE_COMMET_API } from '../utils/constants';
