@@ -19,8 +19,8 @@ const i =setInterval(()=>{
 
 return ()=> clearTimeout(i);
   },[]);
-  return <><div className='w-full h-[500px] ml-2 p-2 border border-black
-  bg-slate-100 rounded-lg  overflow-y-scroll  flex flex-col-reverse'> 
+  return <><div className='w-full h-[500px] ml-2 p-2 
+  rounded-lg  overflow-y-scroll  flex flex-col-reverse'> 
   <div>
 {
   chatMessage.map((c,i)=><ChatMessage  key={i} name={c.name} message={c.message} />)
@@ -28,7 +28,7 @@ return ()=> clearTimeout(i);
 </div>
   </div>
 
-  <form className='w-full p-2 ml-2 border border-black'
+  <form className="flex items-center justify-between p-2 border-t border-black"
   onSubmit={(e)=>{
     e.preventDefault();
     dispatch(addMessage({
@@ -39,8 +39,8 @@ return ()=> clearTimeout(i);
   }}
 
   >
-<input  className="px-2 w-1/2" type="text" value={liveMessage}  onChange={(e)=> {setLiveMessage(e.target.value)}}/>
-<button className='px-2 mx-2 bg-green-100'>Send</button>
+<input    className="flex-grow px-4 py-2 mr-4 border border-gray-400 rounded-lg" type="text" value={liveMessage}  onChange={(e)=> {setLiveMessage(e.target.value)}}/>
+<button className="px-4 py-2 text-white bg-green-500 rounded-lg">Send</button>
   </form>
 </>
 
