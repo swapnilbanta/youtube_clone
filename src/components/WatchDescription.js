@@ -6,6 +6,7 @@ const WatchDescription = () => {
   const [watch, setWatch] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [showFullDescription, setShowFullDescription] = useState(false); // State to track if full description should be shown
   const [searchParams] = useSearchParams();
   
   useEffect(() => {
@@ -29,6 +30,10 @@ const WatchDescription = () => {
     }
   };
 
+  const toggleDescription = () => {
+    setShowFullDescription(!showFullDescription);
+  };
+
   if (loading) {
     return <div className="m-5">Loading...</div>;
   }
@@ -49,12 +54,17 @@ const WatchDescription = () => {
               <button className="mx-4 rounded-full p-2 font-bold bg-black text-white">Subscribe</button>
             </div>
           </div>
-          <div  className='bg-gray-100 w-4/6 p-6   rounded-lg'> 
-          <p className="mt-2 font-semibold">{watch?.statistics?.viewCount} Views</p>
-            <p className=" mt-2">{watch?.snippet?.description}</p>
+          <div className='bg-gray-100 w-4/6 p-6 rounded-lg'> 
+            <p className="mt-2 font-semibold">{watch?.statistics?.viewCount} Views</p>
+            <p className="mt-2">{showFullDescription ? watch?.snippet?.description : `${watch?.snippet?.description.slice(0, 200)}...`}</p>
+            {watch?.snippet?.description.length > 200 && ( // Display "see more" button if description is longer than 200 characters
+              <button className="text-blue-500 mt-2" onClick={toggleDescription}>
+                {showFullDescription ? 'See less' : 'See more'}
+              </button>
+            )}
           </div>
           <div className='my-8'>
-          <h2 className="text-xl font-bold">{watch?.statistics?.commentCount} Comments</h2>
+            <h2 className="text-xl font-bold">{watch?.statistics?.commentCount} Comments</h2>
           </div>
         </>
       )}
