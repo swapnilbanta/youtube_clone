@@ -28,7 +28,7 @@ return ()=> clearTimeout(i);
 </div>
   </div>
 
-  <form className="flex items-center justify-between p-2 border-t border-black"
+  <form className="flex items-center justify-between p-1 border-t border-black"
   onSubmit={(e)=>{
     e.preventDefault();
     dispatch(addMessage({
