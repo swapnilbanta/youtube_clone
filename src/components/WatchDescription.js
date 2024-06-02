@@ -49,8 +49,9 @@ const WatchDescription = () => {
               <button className="mx-4 rounded-full p-2 font-bold bg-black text-white">Subscribe</button>
             </div>
           </div>
-          <div> 
-            <p className="w-3/6 mt-2">{watch?.snippet?.description}</p>
+          <div  className='bg-gray-100 w-4/6 p-6   rounded-lg'> 
+          <p className="mt-2 font-semibold">{watch?.statistics?.viewCount} Views</p>
+            <p className=" mt-2">{watch?.snippet?.description}</p>
           </div>
           <div className='my-8'>
           <h2 className="text-xl font-bold">{watch?.statistics?.commentCount} Comments</h2>
