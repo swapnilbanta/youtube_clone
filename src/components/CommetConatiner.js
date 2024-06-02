@@ -16,8 +16,8 @@ const json = await data.json();
 setCommets(json.items);
 }
  return (
-    <div className='m-5 p-2 w-3/6'>
-        <h1 className='text-2xl font-bold'> Commets: </h1>
+    <div className='m-5 p-2 w-3/6 '>
+        
         <CommetList commets = {commetsData} / >
     </div>
   )

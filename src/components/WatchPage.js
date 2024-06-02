@@ -5,6 +5,7 @@ import { closeMenu } from '../utils/appSlice';
 import { useSearchParams } from 'react-router-dom';
 import CommetConatiner from './CommetConatiner';
 import LiveChat from './LiveChat';
+import WatchDescription from './WatchDescription';
 
 const WatchPage = () => {
   const [searchParams] = useSearchParams();
@@ -16,7 +17,6 @@ const WatchPage = () => {
 
   return (
     <>
-      {/* <div className='flex flex-wrap'> */}
       <div className=''>
         <div className='px-5 flex'>
         <SideBar />
@@ -36,6 +36,7 @@ const WatchPage = () => {
           </div>
         </div>
       </div>
+      <WatchDescription />
       <CommetConatiner />
      
     </>
