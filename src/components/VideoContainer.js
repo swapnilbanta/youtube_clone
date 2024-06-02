@@ -58,7 +58,7 @@ const VideoContainer = () => {
     <ShimmerCard />
   ) : (
     <div className="flex flex-wrap">
-      {videos.map(video => (
+      {videos.map((video) => (
         <Link key={video.id} to={'/watch?v=' + video.id}>
           <VideoCard info={video} />
         </Link>
