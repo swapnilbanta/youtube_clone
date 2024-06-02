@@ -41,7 +41,7 @@ const WatchDescription = () => {
     <div className="m-5">
       {watch && (
         <>
-          <div className="mb-8">
+          <div className="mb-8 w-4/6">
             <h1 className="text-2xl font-bold mb-2">{watch?.snippet?.title}</h1>
             <div className="flex items-center">
               <img className="w-12 h-12 rounded-full" src={watch?.snippet?.thumbnails?.medium?.url} alt="Thumbnail" />
