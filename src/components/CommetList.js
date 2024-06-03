@@ -4,7 +4,7 @@ import Commet from './Commet'
 const CommetList = ({commets}) => {
   return commets.map((commet, index)=>(
     <div>
-          <div className='pl-8 '>
+          <div className='pl-8 mt-2'>
         <Commet key={index} data={commet.snippet}/>
 
         </div>
