@@ -20,8 +20,9 @@ const WatchPage = () => {
       <div className=''>
         <div className='px-5 flex'>
         <SideBar />
-          <div className='rounded-full'>
+          <div className=''>
           <iframe
+          className='rounded-full'
             width="1000"
             height="500"
             src={"https://www.youtube.com/embed/" + searchParams.get("v")}
