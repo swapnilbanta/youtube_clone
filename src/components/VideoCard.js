@@ -1,4 +1,5 @@
 import React from 'react';
+import { formatViewCount } from '../utils/helper';
 
 const VideoCard = ({info}) => {
     const {snippet, statistics} = info;
@@ -9,7 +10,7 @@ const VideoCard = ({info}) => {
             <ul>
                 <li className='font-bold py-2'>{title}</li>
                 <li>{channelTitle}</li>
-                <li>{statistics?.viewCount} views</li>
+                <li>{formatViewCount(statistics?.viewCount)} views</li>
             </ul>
         </div>
     );
