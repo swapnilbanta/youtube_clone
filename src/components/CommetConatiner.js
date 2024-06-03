@@ -1,23 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import CommetList from './CommetList';
-import {  useSearchParams } from 'react-router-dom';
-import { GOOGLE_API_KEY, YOUTUBE_COMMET_API } from '../utils/constants';
+import useCommet from '../Hooks/useCommet';
 
 const CommetConatiner = () => {
-    const [searchParams] = useSearchParams();
-    const[commetsData, setCommets] = useState([]);
-    const id = searchParams.get("v")
-useEffect(()=>{
-    getCommetsData();
-},[]);
-const getCommetsData = async ()=>{
-const data =  await fetch(YOUTUBE_COMMET_API+id+"&key="+GOOGLE_API_KEY);
-const json = await data.json();
-setCommets(json.items);
-}
+   const commetsData = useCommet();
  return (
-    <div className='m-5 p-2 w-4/6 '>
-        
+    <div className='m-5 p-2 w-4/6 '>  
         <CommetList commets = {commetsData} / >
     </div>
   )
