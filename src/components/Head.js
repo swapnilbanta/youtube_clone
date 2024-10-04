@@ -30,17 +30,21 @@ else{
   }, [searchQuery]);
 
   const getSearchSuggestions = async () => {
-    const data = await fetch(YOUTUBE_SEARCH_API + searchQuery);
-    const json = await data.json();
-    setSuggestions(json[1]);
-    setShowSuggestions(true); // Show suggestions after fetching
-    dispatch(cacheResults({
-      [searchQuery]:json[1]
-    }))
+    try {
+      const data = await fetch(YOUTUBE_SEARCH_API + searchQuery);
+      if (!data.ok) {
+        throw new Error('Failed to fetch');
+      }
+      const json = await data.json();
+      setSuggestions(json[1]);
+      setShowSuggestions(true); // Show suggestions after fetching
+      dispatch(cacheResults({
+        [searchQuery]: json[1]
+      }));
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
   }
-
-  
-
   return (
     <div className='grid grid-flow-col p-5 m-2 shadow-lg'>
       <div className='flex col-span-1 '>

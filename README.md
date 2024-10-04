@@ -39,3 +39,5 @@ new Map(); searching inside the object
       ->web sockets (Ui)   Handskake  bidirectional live data   (server)
       ->Long polling (API polling)  (UI)  request to server (server)
 
+
+      when we are using the setInterval we need make sure to use the garabage collection  in it . To clear the clearInterval.
